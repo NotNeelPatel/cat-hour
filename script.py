@@ -79,5 +79,5 @@ f.write(header)
 f.write(content)
 f.write(footer)
 
-# A bash script (not in this repo) runs every hour to push to my website
+# Run a cron job every hour, running this script and pushing the contents.
 
