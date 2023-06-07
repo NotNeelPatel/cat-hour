@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .pinterest-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .pinterest-item {
+      flex: 0 0 calc(33.33% - 10px);
+      margin-bottom: 10px;
+      break-inside: avoid;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+  <script>
+    window.addEventListener('load', function() {
+      var container = document.querySelector('.pinterest-container');
+      var items = container.querySelectorAll('.pinterest-item');
+      var columnHeights = [0, 0, 0];
+
+      function rearrangeItems() {
+        items.forEach(function(item) {
+          var columnIndex = Array.from(columnHeights).indexOf(Math.min(...columnHeights));
+          item.style.order = columnIndex;
+          columnHeights[columnIndex] += item.offsetHeight + 10;
+        });
+      }
+
+      function addNewItem(imageURL) {
+        var newItem = document.createElement('div');
+        newItem.className = 'pinterest-item';
+        var newImage = document.createElement('img');
+        newImage.src = imageURL;
+        newImage.alt = 'Image';
+        newItem.appendChild(newImage);
+        container.appendChild(newItem);
+        items = container.querySelectorAll('.pinterest-item');
+        rearrangeItems();
+      }
+
+      // Example usage: addNewItem('path/to/image.jpg');
+    });
+  </script>
+</head>
+<body>
+  <div class="pinterest-container">
+    <div class="pinterest-item">
+        <a href="https://reddit.com//r/MEOW_IRL/comments/142o44o/meow_irl/"><img src="https://i.redd.it/v8nbp6gwsf4b1.jpg"></a>
+    </div>
+    <div class="pinterest-item">
+        <a href="https://reddit.com//r/blurrypicturesofcats/comments/140x7b9/blurry_picture_of_a_cat/"><img src="https://i.redd.it/qahv622qn34b1.jpg"></a>
+    </div>
+    <div class="pinterest-item">
+        <a href="https://reddit.com//r/sillycats/comments/142myxj/limk/"><img src="https://i.redd.it/g3o5cyslmf4b1.jpg"></a>
+    </div>
+    <div class="pinterest-item">
+        <a href="https://reddit.com//r/MEOW_IRL/comments/142o44o/meow_irl/"><img src="https://i.redd.it/v8nbp6gwsf4b1.jpg"></a>
+    </div>
+    <div class="pinterest-item">
+        <a href="https://reddit.com//r/blurrypicturesofcats/comments/141f949/blurry_picture_of_a_cat/"><img src="https://i.redd.it/wd45atanf74b1.jpg"></a>    </div>
+    <div class="pinterest-item">
+        <a href="https://reddit.com//r/blurrypicturesofcats/comments/141t7yj/blurry_picture_of_a_cat/"><img src="https://i.redd.it/52hn7h8kt94b1.jpg"></a>    </div>
+  </div>
+</body>
+</html>

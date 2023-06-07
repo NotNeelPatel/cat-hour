@@ -1,9 +1,12 @@
 import requests
+from dotenv import load_dotenv
+import os
 import random
 
 # Stores the urls for the posts
 imageURLs = [] 
 originalURLs = []
+captions = []
 
 def get_content(subreddit, count):
     """
@@ -16,6 +19,7 @@ def get_content(subreddit, count):
             if 'imgur' not in post['data']['url_overridden_by_dest'] and 'v.redd.it' not in post['data']['url_overridden_by_dest']:
                 originalURLs.append('https://reddit.com/' + post['data']['permalink'])
                 imageURLs.append(post['data']['url_overridden_by_dest'])
+                captions.append(post['data']['title'])
 
 def readHTML(filename) -> str:
     """
@@ -32,14 +36,14 @@ def readFile(fileName: str) -> str:
         return f.read()
 
 # You will need to provide your own client id, secret key, username, and password if you want this to work
-
-CLIENT_ID = readFile('token')
-SECRET_KEY = readFile('secret')
+load_dotenv()
+CLIENT_ID = os.getenv("TOKEN")
+SECRET_KEY = os.getenv("SECRET")
 
 auth = requests.auth.HTTPBasicAuth(CLIENT_ID,SECRET_KEY)
 
-USERNAME = readFile('user')
-PASSWORD = readFile('pass')
+USERNAME = os.getenv('USERNAME')
+PASSWORD = os.getenv('PASSWORD')
 
 data = {
     'grant_type': 'password',
@@ -57,18 +61,21 @@ headers['Authorization'] = f'bearer {TOKEN}'
 # Getting content from the following subreddits
 # The number refers to the amount of posts I look for in these subreddits
 # The higher the number, the more likely those posts will be shown
-get_content('blurrypicturesofcats', 1)
+get_content('blurrypicturesofcats', 30)
 get_content('sillycats', 5)
-get_content('WhatsWrongWithYourCat', 5)
+get_content('WhatsWrongWithYourCat', 10)
 get_content('MEOW_IRL', 10)
-get_content('Catswithjobs', 8)
+get_content('Catswithjobs', 15)
+get_content('Catmemes', 5)
+get_content('CatsStandingUp', 10)
 
 # Create post tuple and randomize it
-posts = [(originalURLs[i], imageURLs[i]) for i in range(len(imageURLs))]
-random.shuffle(posts)
+postList = [(originalURLs[i], imageURLs[i], captions[i]) for i in range(len(imageURLs))]
+random.shuffle(postList)
+posts = []
 content = '\n'
 for i in range(9):
-    content += '<a href="'+posts[i][0]+'"><img src="'+posts[i][1]+'"/></a>\n'
+    content += '<div class="post-wrapper">\n<a href="'+postList[i][0]+'"><img src="'+postList[i][1]+'"/></a>\n<div class="caption">\n<p>'+postList[i][2]+'</p>\n</div>\n</div>\n'
 
 header = readHTML('header.html')
 footer = readHTML('footer.html')
