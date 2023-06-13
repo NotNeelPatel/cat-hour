@@ -63,7 +63,7 @@ headers['Authorization'] = f'bearer {TOKEN}'
 # The higher the number, the more likely those posts will be shown
 get_content('blurrypicturesofcats', 30)
 get_content('sillycats', 5)
-get_content('WhatsWrongWithYourCat', 10)
+#get_content('WhatsWrongWithYourCat', 10)
 get_content('MEOW_IRL', 10)
 #get_content('Catswithjobs', 15)
 get_content('Catmemes', 5)
