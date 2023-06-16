@@ -7,5 +7,14 @@
 <p>all images and captions taken from <a href="https://www.reddit.com">reddit.com</a>, click on the images to go to the source</p>
 <p><a href="https://github.com/notneelpatel/cat-hour">GitHub Repo</a></p>
 </footer>
+<script>
+    // Taken from https://stackoverflow.com/questions/16354122/how-to-put-scrolling-text-in-title-tag
+  (function titleScroller(text) {
+      document.title = text;
+      setTimeout(function () {
+          titleScroller(text.substr(1) + text.substr(0, 1));
+      }, 170);
+  }(" CAT / HOUR"));
+  </script>
 </body>
 </html>
