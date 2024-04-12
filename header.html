@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CAT / HOUR</title>
+  <meta charset="UTF-8" />
+  <meta property="og:title" content="CAT / HOUR" />
+  <meta property="og:url" content="https://notneelpatel.github.io/cat-hour" />
+  <meta property="og:image" content="https://notneelpatel.github.io/cat-hour/og_image.jpg" />
+  <meta name="og:image" content="https://notneelpatel.github.io/cat-hour/og_image.jpg" />
+  <meta property="og:description" content="9 random cat images per hour" />
+  <meta property="og:type" content="website" /> 
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="./favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="./darkmode.js"></script>
+</head>
+<body>
+  <script src="./oneko.js"></script>
+  <header>
+    <div>
+    </div>
+    <h1><i>CAT / HOUR</i></h1>
+    <div>
+      <a onclick="toggleDarkMode()" id="darkModeToggle" href="#">🌙</a>
+      <script>
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.getElementById("darkModeToggle").textContent = "☀️"
+        }
+      </script>
+    </div>
+  </header>
+  <main>
+    <div id="container">
+      <div id="image-container">
