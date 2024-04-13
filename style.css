@@ -10,24 +10,6 @@
     --text-colour: #504945;
     --linkcolour: #1f868b;
     --background-url: url("bg.png");
-    
-    /* Halloween Mode */
-    /*
-    --container-colour: #f2dabde6;
-    --border-colour: #4e2d14;
-    --text-colour: #302720;
-    --linkcolour: #994a0e;
-    --background-url: url("halloween_bg_light.png");
-    */
-    /* Christmas mode */
-    /*
-    --background-colour: #ffffff;
-    --container-colour: #ffffffe6;
-    --border-colour: #c45959;
-    --text-colour: #000000;
-    --linkcolour: #038d94;
-    --background-url: url("christmas_bg_light.png");
-    */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -40,28 +22,8 @@
         --text-colour: #f2dabd;
         --linkcolour: #5fe4eb;
         --background-url: url("bg.png");
-        
-        /* Halloween Dark Mode */
-        /*
-        --container-colour: #210030e6;
-        --border-colour:  #7adb6d;
-        --text-colour: #7adb6d;
-        --linkcolour: #dfa3ee;
-        --background-url: url("halloween_bg_dark.png");
-        */
-        /* Christmas Dark Mode */
-        /*
-        --background-colour: #000000;
-        --container-colour: #222222e6;
-        --border-colour:  #8f8f8f;
-        --text-colour: #ffffff;
-        --linkcolour: #5fe4eb;
-        --background-url: url("christmas_bg_dark.png");
-        */
     }
 }
-
-
 
 #darkModeToggle{
     text-decoration: none;
@@ -154,8 +116,6 @@ img{
     line-height: normal;
     background-color: white;
     z-index:1000;
-
-
 }
 
 .post-wrapper:hover img{
