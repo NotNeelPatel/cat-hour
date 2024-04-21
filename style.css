@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,700&family=Roboto+Serif:wght@300&display=swap');
 
-
 :root{
-    /* Light mode */
-    
     --background-colour: #fffaf0;
     --container-colour: #f2dabde6;
     --border-colour: #7c6f64;
@@ -12,18 +9,22 @@
     --background-url: url("bg.png");
 }
 
-@media (prefers-color-scheme: dark) {
-    :root{
-        /* Dark Mode */
-        
-        --background-colour: #504945;
-        --container-colour: #7c6f64e6;
-        --border-colour:  #b19d87;
-        --text-colour: #f2dabd;
-        --linkcolour: #5fe4eb;
-        --background-url: url("bg.png");
-    }
+:root.light{
+    --background-colour: #fffaf0;
+    --container-colour: #f2dabde6;
+    --border-colour: #7c6f64;
+    --text-colour: #504945;
+    --linkcolour: #1f868b;
 }
+
+:root.dark{
+    --background-colour: #504945;
+    --container-colour: #7c6f64e6;
+    --border-colour:  #b19d87;
+    --text-colour: #f2dabd;
+    --linkcolour: #5fe4eb;
+}
+
 
 #darkModeToggle{
     text-decoration: none;

@@ -1,56 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>CAT / HOUR</title>
-  <meta charset="UTF-8" />
-  <meta property="og:title" content="CAT / HOUR" />
-  <meta property="og:url" content="https://notneelpatel.github.io/cat-hour" />
-  <meta property="og:image" content="https://notneelpatel.github.io/cat-hour/og_image.jpg" />
-  <meta name="og:image" content="https://notneelpatel.github.io/cat-hour/og_image.jpg" />
-  <meta property="og:description" content="9 random cat images per hour" />
-  <meta property="og:type" content="website" /> 
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/x-icon" href="./favicon.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script src="./darkmode.js"></script>
-</head>
-<body>
-  <script src="./oneko.js"></script>
-  <header>
-    <div>
-    </div>
-    <h1><i>CAT / HOUR</i></h1>
-    <div>
-      <a onclick="toggleDarkMode()" id="darkModeToggle" href="#">🌙</a>
-      <script>
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          document.getElementById("darkModeToggle").textContent = "☀️"
-        }
-      </script>
-    </div>
-  </header>
-  <main>
-    <div id="container">
-      <div id="image-container" data-entries-container>
-        <template data-template>
-          <div class="post-wrapper">
-            <a class="url" href="#" data-url>
-              <img class="img" href="#" data-img/>
-            </a>
-            <div class="caption">
-              <p class="caption-text" data-caption></p>
+  <head>
+    <title>CAT / HOUR</title>
+    <meta charset="UTF-8" />
+    <meta property="og:title" content="CAT / HOUR" />
+    <meta property="og:url" content="https://notneelpatel.github.io/cat-hour" />
+    <meta property="og:image" content="https://notneelpatel.github.io/cat-hour/og_image.jpg" />
+    <meta name="og:image" content="https://notneelpatel.github.io/cat-hour/og_image.jpg" />
+    <meta property="og:description" content="9 random cat images per hour" />
+    <meta property="og:type" content="website" /> 
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="./favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <header>
+      <div>
+      </div>
+      <h1><i>CAT / HOUR</i></h1>
+      <div>
+        <a onclick="toggleDarkMode()" id="darkModeToggle" href="#">🌙</a>
+      </div>
+    </header>
+    <main>
+      <div id="container">
+        <div id="image-container" data-entries-container>
+          <template data-template>
+            <div class="post-wrapper">
+              <a class="url" href="#" data-url>
+                <img class="img" href="#" data-img/>
+              </a>
+              <div class="caption">
+                <p class="caption-text" data-caption></p>
+              </div>
             </div>
-          </div>
-        </template>
-</div>
-</div>
-</main>
-<footer>
-<p>2024 <a href="https://notneelpatel.github.io">Neel Patel</a></p>
-<p>Images get updated as more submissions are posted</p>
-<p>all images and captions taken from <a href="https://www.reddit.com">reddit.com</a>, click on the images to go to the source</p>
-<p><a href="https://github.com/notneelpatel/cat-hour">GitHub Repo</a></p>
-<script src="./cathour.js"></script>
-</footer>
-</body>
+          </template>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <script src="./cathour.js" defer></script>
+      <script src="./darkmode.js" ></script>
+      <script src="./oneko.js" defer></script>
+      <p>2024 <a href="https://notneelpatel.github.io">Neel Patel</a></p>
+      <p>Images get updated as more submissions are posted</p>
+      <p>all images and captions taken from <a href="https://www.reddit.com">reddit.com</a>, click on the images to go to the source</p>
+      <p><a href="https://github.com/notneelpatel/cat-hour">GitHub Repo</a></p>
+    </footer>
+  </body>
 </html>
