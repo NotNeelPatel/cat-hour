@@ -13,10 +13,11 @@ function getImages(i){
             while(subs_and_weights[i].count < 5){
                 const children = data.data.children[subs_and_weights[i].count];
                 if(!(children.data.is_video) 
-                    && !(children.data.is_gallery) 
+                    && !(children.data.is_gallery)
                     && !(children.data.url_overridden_by_dest == undefined)  
                     && !(children.data.url_overridden_by_dest.includes("imgur"))
-                    && !(children.data.url_overridden_by_dest.includes("v.redd.it"))){
+                    && !(children.data.url_overridden_by_dest.includes("v.redd.it"))
+                    && !(children.data.url_overridden_by_dest.includes("gallery"))){
 
                     const card = dataTemplate.content.cloneNode(true).children[0];
                     const img = card.querySelector("[data-img]");
