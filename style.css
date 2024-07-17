@@ -52,17 +52,20 @@ header{
     grid-column-gap: 0px;
     grid-row-gap: 0px; 
     align-items: center;
+    margin-bottom: 40px;
 }
 
 #container, header, footer{
     background-color: var(--container-colour);
-
-
     padding: 10px;
     border: 5px var(--border-colour) solid;
     border-radius: 20px;
-
 }
+
+#container{
+    margin-bottom: 40px;
+}
+
 #image-container{
     margin:10px;
     -moz-column-count:    3;
