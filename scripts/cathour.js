@@ -87,15 +87,14 @@ async function getCandidates(subreddit) {
     let reddit_url = "https://www.reddit.com/r/"+subreddit+"/new.json?limit="+limit;
     // use for debug
     //let reddit_url = "./debug.json";
-    let count = 0;
     let new_candidates = [];
 
     // Fetch reddit URL
     const res = await fetch(reddit_url);
     const data = await res.json();
     for (let i = 0; i < limit; i++) {
-        if (data.data.children[count] != null) {
-            const children = data.data.children[count];
+        if (data.data.children[i] != null) {
+            const children = data.data.children[i];
             
             // Filter out galleries and videos and imgur links (they dont embed on other websites)
             if (
@@ -142,6 +141,7 @@ function setImages(subreddit, id, reddit_objs) {
         );
         return false;
     }
+
     subs_and_weights[subreddit].count++;
 
     card.id = "window-" + id;
