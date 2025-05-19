@@ -7,40 +7,27 @@
 }
 
 :root{
-    --background-colour: #fffaf0;
-    --container-colour: #f2dabde6;
-    --border-colour: #7c6f64;
-    --text-colour: #504945;
-    --linkcolour: #1f868b;
-    --background-url: url("bg.png");
+    --background-url: url("bg.gif");
 
-    --title-bar-colour: #e5c9ef;
-    --title-text-colour: #413338;
     --text-white: #f2faf5;
-    --text-dark: #011f1f;
-    --window-background-colour: #bed8d8;
-    --background-colour: #bbedf9;
-    --true-background-colour: #92b4bc;
-    --button-colour: #669589;
-    --button-hover: #70ac9e;
-    --window-minmax-colour: #669295;
+    --text-dark: #282927;
+    --linkcolour: #4d1d50;
+    --title-text-colour: #413338;
+
+    --title-bar-colour: #f1dddd;
+    --window-minmax-colour: #b6a4b5;
     --window-close-colour: #d4a49f;
-}
 
-:root.light{
-    --background-colour: #fffaf0;
-    --container-colour: #f2dabde6;
-    --border-colour: #7c6f64;
-    --text-colour: #504945;
-    --linkcolour: #1f868b;
-}
+    --background-colour: #f1dddd;
+    --container-colour: #b394a2d2;
+    --window-background-colour: #d19ca6;
 
-:root.dark{
-    --background-colour: #504945;
-    --container-colour: #7c6f64e6;
-    --border-colour:  #b19d87;
-    --text-colour: #f2dabd;
-    --linkcolour: #5fe4eb;
+    --max-w: 450px;
+    --max-h: 450px;
+    --title-font-size: 16px;
+    --button-font-size: 12px;
+    --button-w: 40px;
+    --button-h: 26px;
 }
 
 /* Window Styles */
@@ -54,7 +41,7 @@
 
 .window-title-bar {
     font-family: "Silkscreen", sans-serif;
-    font-size: 16px;
+    font-size: var(--title-font-size);
     background-color: var(--title-bar-colour);
     color: var(--title-text-colour);
     display: flex;
@@ -73,6 +60,7 @@
 .window-controls {
     display: flex;
     justify-content: space-between;
+
 }
 
 #window-minmax {
@@ -84,12 +72,13 @@
 }
 
 .window-controls button {
+    font-family: "Silkscreen", sans-serif;
     text-align: center;
     color: var(--text-white);
     border: 2px solid var(--window-background-colour);
-    font-size: 12px;
-    width: 40px;
-    height: 24px;
+    font-size: var(--button-font-size);
+    width: var(--button-w);
+    height: var(--button-h);
     border-radius: 5px;
     margin: 2px;
     padding: 5px;
@@ -101,7 +90,7 @@
     align-items: center;
     padding: 8px;
     margin: 0;
-    background-color: var(--title-bar-colour);
+    background-color: var(--container-colour);
     border-radius: 0 0 5px 5px;
     font-size: 15px;
     color: var(--text-dark);
@@ -113,7 +102,7 @@
     flex-direction: column;
     justify-content: center;
     margin: 0;
-    background-color: #eaeaea;
+    background-color: var(--title-bar-colour);
     border: 3px solid var(--window-background-colour);
     border-radius: 5px;
     max-width: min-content;
@@ -124,8 +113,8 @@
     display: flex;
     align-self: center;
     width: fit-content;
-    max-width: 450px;
-    max-height: 450px;
+    max-width: calc(var(--max-w));
+    max-height: calc(var(--max-h));
 }
 
 .caption{
@@ -135,17 +124,14 @@
 }
 
 .caption p{
-    margin: 0;
-    font-family: "baasic", sans-serif;
-    color: #282927;
+    margin: 0;;
 }
 
 .url{
     text-align: left;
-    font-family: "baasic", sans-serif;
     font-size: 12px;
     padding: 4px;
-    color:#1d4e50;
+    color:var(--linkcolour);
     width: fit-content;
 }
 
@@ -156,42 +142,30 @@
     box-shadow: -5px 5px 5px 2px rgba(0, 0, 0, 0.2);
 }
 
-#darkModeToggle{
-    text-decoration: none;
-    color: transparent;  
-    text-shadow: 0 0 0 var(--text-colour);
-    font-size: large;
-}
 body{
-    margin-left: 5%;
-    margin-right: 5%;
     background-image: var(--background-url);
     background-repeat: repeat;
+}
+
+footer{
+    position:absolute;
+    margin: 10px;
+    padding: 10px;
+    border: 3px solid var(--window-background-colour);
+    border-radius:10px;
+    bottom: 0;
+    left: 0;
     background-color: var(--background-colour);
 }
 
-header, footer{
-    margin-bottom:10px;
-    margin-top:10px;
-}
 
-header{
-    display: grid;
-    grid-template-columns: 5% 1fr 5%;
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px; 
-    align-items: center;
-    margin-bottom: 40px;
-}
 
-header, footer{
-    background-color: var(--container-colour);
-    padding: 10px;
-    border: 5px var(--border-colour) solid;
-    border-radius: 20px;
-}
+footer p{
+    font-size: 13px;
+    color: var(--text-dark);
+    margin: 0;
 
+}
 #container {
     max-width: 400px;
     max-height: 400px;
@@ -206,61 +180,49 @@ header, footer{
 }
 
 
-
-
-
-h1{
-    font-family: 'Roboto Mono 700 Italic', monospace;
-    color:var(--text-colour);
-    text-align: center;
-}
 p{
-    font-family: 'Roboto Serif Light 300', serif;
+    font-family: "baasic", sans-serif;
     color:var(--text-colour);
     text-align: center;
 }
 a{
-    font-family: 'Roboto Serif Light 300', serif;
+    font-family:"baasic", sans-serif;
     color:var(--linkcolour)
 }
 
 
 
-/*
+
 @media (max-width: 1200px) {
-    #image-container {
-        -moz-column-count:    3;
-        -webkit-column-count: 3;
-        column-count:         3;
+    :root{
+        --max-w: 450px;
+        --max-h: 450px;
+        --title-font-size: 16px;
+        --button-font-size: 12px;
+        --button-w: 40px;
+        --button-h: 26px;
     }
+
+
 }
 @media (max-width: 1000px) {
-    header{
-        grid-template-columns: 8% 1fr 8%;
+    :root{
+        --max-w: 200px;
+        --max-h: 450px;
+        --title-font-size: 12px;
+        --button-font-size: 8px;
+        --button-w: 30px;
+        --button-h: 16px;
     }
-    body {
-        margin-left: 10%;
-        margin-right: 10%;
+
+    .window-controls button {
+        padding: 2px;
     }
-    #image-container {
-        -moz-column-count:    2;
-        -webkit-column-count: 2;
-        column-count:         2;
-    }
+
 }
 @media (max-width: 600px) {
-    header{
-        grid-template-columns: 10% 1fr 10%;
-    }
-    body{
-        margin-left: 8%;
-        margin-right: 8%;
-    }
-    #image-container {
-        -moz-column-count:    1;
-        -webkit-column-count: 1;
-        column-count:         1;
-    }
+
+
+
 }
 
-*/
