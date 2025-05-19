@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
+    <!--
     <header>
       <div>
       </div>
@@ -22,30 +23,51 @@
         <a onclick="toggleDarkMode()" id="darkModeToggle" href="#">🌙</a>
       </div>
     </header>
+    -->
     <main>
+      
       <div id="container">
         <div id="image-container" data-entries-container>
           <template data-template>
-            <div class="post-wrapper">
-              <a class="url" href="#" data-url>
-                <img class="img" href="#" data-img/>
-              </a>
-              <div class="caption">
-                <p class="caption-text" data-caption></p>
+            <div class="window-container" data-container>
+              <div class="window-border">
+                <div class="window-title-bar">
+                  <span class = "window-title">CAT / HOUR</span>
+                  <div class="window-controls">
+                    <button type="button" class="window-control-button" id="window-minimize">-</button>
+                    <button type="button" class="window-control-button" id="window-maximize">[]</button>
+                    <button type="button" class="window-control-button" id="window-close">X</button>
+                  </div>
+                </div>
+                <div class="window-content">
+                  <div class="post-wrapper">
+                    <img class="cat-img" href="#" data-img/>
+                    <div class="caption">
+                      <p data-caption></p>
+                    </div>
+                    <a class="url" href="#" data-url>source</a>
+                  </div>
+                </div>
               </div>
             </div>
+    
           </template>
         </div>
       </div>
     </main>
-    <footer>
+
+       <!-- <footer>        <script src="./oneko.js" defer></script> -->
       <script src="./cathour.js" defer></script>
-      <script src="./darkmode.js" ></script>
-      <script src="./oneko.js" defer></script>
-      <p>2024 <a href="https://notneelpatel.github.io">Neel Patel</a></p>
+      <script src="./window.js"></script>
+
+      <script src="./darkmode.js" defer></script>
+
+      <!--
+      <p>2025 <a href="https://notneelpatel.github.io">Neel Patel</a></p>
       <p>Images get updated as more submissions are posted</p>
       <p>all images and captions taken from <a href="https://www.reddit.com">reddit.com</a>, click on the images to go to the source</p>
       <p><a href="https://github.com/notneelpatel/cat-hour">GitHub Repo</a></p>
     </footer>
+    -->
   </body>
 </html>
