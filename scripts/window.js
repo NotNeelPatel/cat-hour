@@ -79,9 +79,28 @@ function dragElement(elem) {
     }
 }
 
+function mobileAlignImages(){
+  var currentHeight = 100;
+  console.log("mobile")
+  for(let i = 0; i < 9; i++){
+    const card = document.getElementById("window-" + i);
+    card.style.transition = "ease-in-out 0.3s";
+    card.style.left = 25 + "%"
+    card.style.top = (currentHeight)*1.05 + ("px");
+    currentHeight += card.offsetHeight;
+    card.style.transition = "0s";
+    console.log(card.style.left)
+  }
+
+}
+
 
 function alignImages(){
-  var totalWidth = 40;
+  if(window.innerWidth < 600){
+    mobileAlignImages();
+    return;
+  }
+  var totalWidth = 0;
   var currentHeight = 0;
   var maxHeight = 0;
   for(let i = 0; i < 9; i++){
@@ -91,9 +110,9 @@ function alignImages(){
       currentHeight += maxHeight;
     }
     if (card.offsetHeight > maxHeight) maxHeight = card.offsetHeight;
-    card.style.transition = "ease-in 0.3s";
-    card.style.left = (400 + totalWidth)*1.1 + ("px");
-    card.style.top = (40 + currentHeight)*1.05 + ("px");
+    card.style.transition = "ease-in-out 0.3s";
+    card.style.left = (200 + totalWidth)*1.1 + ("px");
+    card.style.top = (90 + currentHeight)*1.05 + ("px");
     totalWidth += card.offsetWidth;
     card.style.transition = "0s";
   }

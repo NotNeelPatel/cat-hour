@@ -153,7 +153,7 @@ function setImages(subreddit, id, reddit_objs) {
     const w = window.innerWidth - 600;
     const h = window.innerHeight - 400;
     const quarter_w = 150;
-    const quarter_h = 20;
+    const quarter_h = 50;
     card.style.top = Math.random() * h + quarter_h + "px";
     card.style.left = Math.random() * (w - quarter_w) + quarter_w + "px";
     dragElement(document.getElementById("window-" + id));

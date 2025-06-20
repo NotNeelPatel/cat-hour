@@ -142,6 +142,26 @@
     box-shadow: -5px 5px 5px 2px rgba(0, 0, 0, 0.2);
 }
 
+body{
+    background-image: var(--background-url);
+    background-repeat: repeat;
+}
+
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display:flex;
+}
+
+header p{
+    font-size: 13px;
+    color: var(--text-dark);
+    margin: 0;
+
+}
+
 #grid-button-container{
     background-color:var(--window-background-colour);
     display:flex;
@@ -150,6 +170,7 @@
     border-radius: 10px;
     width:fit-content;
     height: min-content;
+    margin: 10px;
 }
 
 #grid-button-container svg{
@@ -160,36 +181,19 @@
     fill: #69555c;
 }
 
-
-body{
-    background-image: var(--background-url);
-    background-repeat: repeat;
-}
-
-footer{
-    position:absolute;
-    margin: 10px;
-    padding: 10px;
+#info-box{
     border: 3px solid var(--window-background-colour);
     border-radius:10px;
-    bottom: 0;
-    left: 0;
     background-color: var(--background-colour);
+    padding: 5px;
+    margin: 10px;
 }
 
 
 
-footer p{
-    font-size: 13px;
-    color: var(--text-dark);
-    margin: 0;
-
-}
 #container {
     max-width: 400px;
     max-height: 400px;
-
-
 }
 
 #image-container{
