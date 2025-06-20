@@ -84,9 +84,9 @@ function weightedRandom(weights) {
 // all potential candidates
 async function getCandidates(subreddit) {
     let limit = 5
-    //let reddit_url = "https://www.reddit.com/r/"+subreddit+"/new.json?limit="+limit;
+    let reddit_url = "https://www.reddit.com/r/"+subreddit+"/new.json?limit="+limit;
     // use for debug
-    let reddit_url = "./debug.json";
+    //let reddit_url = "./debug.json";
     let new_candidates = [];
 
     // Fetch reddit URL
