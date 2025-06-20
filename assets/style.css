@@ -142,6 +142,25 @@
     box-shadow: -5px 5px 5px 2px rgba(0, 0, 0, 0.2);
 }
 
+#grid-button-container{
+    background-color:var(--window-background-colour);
+    display:flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 10px;
+    width:fit-content;
+    height: min-content;
+}
+
+#grid-button-container svg{
+    fill: var(--title-text-colour);
+}
+
+#grid-button-container svg:hover{
+    fill: #69555c;
+}
+
+
 body{
     background-image: var(--background-url);
     background-repeat: repeat;

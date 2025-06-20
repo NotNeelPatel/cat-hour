@@ -84,9 +84,9 @@ function weightedRandom(weights) {
 // all potential candidates
 async function getCandidates(subreddit) {
     let limit = 5
-    let reddit_url = "https://www.reddit.com/r/"+subreddit+"/new.json?limit="+limit;
+    //let reddit_url = "https://www.reddit.com/r/"+subreddit+"/new.json?limit="+limit;
     // use for debug
-    //let reddit_url = "./debug.json";
+    let reddit_url = "./debug.json";
     let new_candidates = [];
 
     // Fetch reddit URL
@@ -153,10 +153,9 @@ function setImages(subreddit, id, reddit_objs) {
     const w = window.innerWidth - 600;
     const h = window.innerHeight - 400;
     const quarter_w = 150;
-    const quarter_h = -50;
+    const quarter_h = 20;
     card.style.top = Math.random() * h + quarter_h + "px";
     card.style.left = Math.random() * (w - quarter_w) + quarter_w + "px";
-    
     dragElement(document.getElementById("window-" + id));
     return true;
 }

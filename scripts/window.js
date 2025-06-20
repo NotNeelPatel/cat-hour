@@ -79,3 +79,24 @@ function dragElement(elem) {
     }
 }
 
+
+function alignImages(){
+  var totalWidth = 40;
+  var currentHeight = 0;
+  var maxHeight = 0;
+  for(let i = 0; i < 9; i++){
+    const card = document.getElementById("window-" + i);
+    if (i % 3 == 0) {
+      totalWidth = 0;
+      currentHeight += maxHeight;
+    }
+    if (card.offsetHeight > maxHeight) maxHeight = card.offsetHeight;
+    card.style.transition = "ease-in 0.3s";
+    card.style.left = (400 + totalWidth)*1.1 + ("px");
+    card.style.top = (40 + currentHeight)*1.05 + ("px");
+    totalWidth += card.offsetWidth;
+    card.style.transition = "0s";
+  }
+    
+}
+
