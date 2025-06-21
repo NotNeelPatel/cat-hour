@@ -1,69 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>CAT / HOUR</title>
-    <meta charset="UTF-8" />
-    <meta property="og:title" content="CAT / HOUR" />
-    <meta property="og:url" content="https://notneelpatel.github.io/cat-hour" />
-    <meta property="og:image" content="https://notneelpatel.github.io/cat-hour/assets/og_image.jpg" />
-    <meta name="og:image" content="https://notneelpatel.github.io/cat-hour/assets/og_image.jpg" />
-    <meta property="og:description" content="9 random cat images per hour" />
-    <meta property="og:type" content="website" /> 
-    <link rel="stylesheet" href="./assets/style.css" />
-    <link rel="icon" type="image/x-icon" href="./assets/favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-  </head>
-  <body>
-    <header>
-          <div id="grid-button-container" onClick="alignImages()">
-        <svg height="48px" width="48px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 460.002 460.002" xml:space="preserve">
-          <g id="SVGRepo_bgCarrier" stroke-width="0"/>
-          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-          <g id="SVGRepo_iconCarrier"> <g> <g> <path d="M427.137,0H32.865C14.743,0,0,14.743,0,32.865v394.272c0,18.122,14.743,32.865,32.865,32.865h394.272 c18.122,0,32.865-14.743,32.865-32.865V32.865C460.002,14.743,445.259,0,427.137,0z M137.305,399.443c0,8.284-6.716,15-15,15 H56.251c-8.284,0-15-6.716-15-15v-66.054c0-8.284,6.716-15,15-15h66.054c8.284,0,15,6.716,15,15V399.443z M137.305,263.028 c0,8.284-6.716,15-15,15H56.251c-8.284,0-15-6.716-15-15v-66.054c0-8.284,6.716-15,15-15h66.054c8.284,0,15,6.716,15,15V263.028z M137.305,126.613c0,8.284-6.716,15-15,15H56.251c-8.284-0.001-15-6.717-15-15.001V60.559c0-8.284,6.716-15,15-15h66.054 c8.284,0,15,6.716,15,15V126.613z M277.071,399.443c0,8.284-6.716,15-15,15h-66.054c-8.284,0-15-6.716-15-15v-66.054 c0-8.284,6.715-15,15-15h66.054c8.284,0,15,6.716,15,15V399.443z M277.071,263.028c0,8.284-6.716,15-15,15h-66.054 c-8.284,0-15-6.716-15-15v-66.054c0-8.284,6.715-15,15-15h66.054c8.284,0,15,6.716,15,15V263.028z M277.071,126.613 c0,8.284-6.716,15-15,15h-66.054c-8.285-0.001-15-6.717-15-15.001V60.559c0-8.284,6.716-15,15-15h66.054c8.284,0,15,6.716,15,15 V126.613z M418.751,399.443c0,8.284-6.716,15-15,15h-66.054c-8.284,0-15-6.716-15-15v-66.054c0-8.284,6.716-15,15-15h66.054 c8.284,0,15,6.716,15,15V399.443z M418.751,263.028c0,8.284-6.716,15-15,15h-66.054c-8.284,0-15-6.716-15-15v-66.054 c0-8.284,6.716-15,15-15h66.054c8.284,0,15,6.716,15,15V263.028z M418.751,126.612c0,8.284-6.716,15-15,15h-66.054 c-8.284,0-15-6.716-15-15V60.559c0-8.284,6.716-15,15-15h66.054c8.284,0,15,6.716,15,15V126.612z"/> </g> </g> </g>
-        </svg>
-    </div>
-      <div id="info-box">
-      <p>2025 <a href="https://notneelpatel.github.io">Neel Patel</a></p>
-      <p>Images get updated as more submissions are posted</p>
-      <p>all images and captions taken from <a href="https://www.reddit.com">reddit.com</a></p>
-      <p><a href="https://github.com/notneelpatel/cat-hour">GitHub Repo</a></p>
-    </div>
-  </header>
-    <main>
-      <div id="container">
-        <div id="image-container" data-entries-container>
-          <template data-template>
-            <div class="window-container" data-container>
-              <div class="window-border">
-                <div class="window-title-bar">
-                  <span class = "window-title">CAT / HOUR</span>
-                  <div class="window-controls">
-                    <button type="button" class="window-control-button" id="window-minmax">_</button>
-                    <button type="button" class="window-control-button" id="window-minmax"><strong>&square;</strong></button>
-                    <button type="button" class="window-control-button" id="window-close">x</button>
-                  </div>
-                </div>
-                <div class="window-content">
-                  <div class="post-wrapper">
-                    <img class="cat-img" href="#" data-img/>
-                    <div class="caption">
-                      <p data-caption></p>
-                    </div>
-                    <a class="url" href="#" data-url>source</a>
-                  </div>
-                </div>
-              </div>
+    <head>
+        <title>CAT / HOUR</title>
+        <meta charset="UTF-8" />
+        <meta property="og:title" content="CAT / HOUR" />
+        <meta
+            property="og:url"
+            content="https://notneelpatel.github.io/cat-hour"
+        />
+        <meta
+            property="og:image"
+            content="https://notneelpatel.github.io/cat-hour/assets/og_image.jpg"
+        />
+        <meta
+            name="og:image"
+            content="https://notneelpatel.github.io/cat-hour/assets/og_image.jpg"
+        />
+        <meta
+            property="og:description"
+            content="9 random cat images per hour"
+        />
+        <meta property="og:type" content="website" />
+        <link rel="stylesheet" href="./assets/style.css" />
+        <link rel="icon" type="image/x-icon" href="./assets/favicon.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+    <body>
+        <header>
+            <div id="grid-button-container" onClick="alignImages()">
+                <svg
+                    height="48px"
+                    width="48px"
+                    version="1.1"
+                    id="Layer_1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 460.002 460.002"
+                    xml:space="preserve"
+                >
+                    <g id="SVGRepo_bgCarrier" stroke-width="0" />
+                    <g
+                        id="SVGRepo_tracerCarrier"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    />
+                    <g id="SVGRepo_iconCarrier">
+                        <g>
+                            <g>
+                                <path
+                                    d="M427.137,0H32.865C14.743,0,0,14.743,0,32.865v394.272c0,18.122,14.743,32.865,32.865,32.865h394.272 c18.122,0,32.865-14.743,32.865-32.865V32.865C460.002,14.743,445.259,0,427.137,0z M137.305,399.443c0,8.284-6.716,15-15,15 H56.251c-8.284,0-15-6.716-15-15v-66.054c0-8.284,6.716-15,15-15h66.054c8.284,0,15,6.716,15,15V399.443z M137.305,263.028 c0,8.284-6.716,15-15,15H56.251c-8.284,0-15-6.716-15-15v-66.054c0-8.284,6.716-15,15-15h66.054c8.284,0,15,6.716,15,15V263.028z M137.305,126.613c0,8.284-6.716,15-15,15H56.251c-8.284-0.001-15-6.717-15-15.001V60.559c0-8.284,6.716-15,15-15h66.054 c8.284,0,15,6.716,15,15V126.613z M277.071,399.443c0,8.284-6.716,15-15,15h-66.054c-8.284,0-15-6.716-15-15v-66.054 c0-8.284,6.715-15,15-15h66.054c8.284,0,15,6.716,15,15V399.443z M277.071,263.028c0,8.284-6.716,15-15,15h-66.054 c-8.284,0-15-6.716-15-15v-66.054c0-8.284,6.715-15,15-15h66.054c8.284,0,15,6.716,15,15V263.028z M277.071,126.613 c0,8.284-6.716,15-15,15h-66.054c-8.285-0.001-15-6.717-15-15.001V60.559c0-8.284,6.716-15,15-15h66.054c8.284,0,15,6.716,15,15 V126.613z M418.751,399.443c0,8.284-6.716,15-15,15h-66.054c-8.284,0-15-6.716-15-15v-66.054c0-8.284,6.716-15,15-15h66.054 c8.284,0,15,6.716,15,15V399.443z M418.751,263.028c0,8.284-6.716,15-15,15h-66.054c-8.284,0-15-6.716-15-15v-66.054 c0-8.284,6.716-15,15-15h66.054c8.284,0,15,6.716,15,15V263.028z M418.751,126.612c0,8.284-6.716,15-15,15h-66.054 c-8.284,0-15-6.716-15-15V60.559c0-8.284,6.716-15,15-15h66.054c8.284,0,15,6.716,15,15V126.612z"
+                                />
+                            </g>
+                        </g>
+                    </g>
+                </svg>
             </div>
-    
-          </template>
-        </div>
-      </div>
-    </main>
+            <div id="info-box">
+                <p>
+                    2025 <a href="https://notneelpatel.github.io">Neel Patel</a>
+                </p>
+                <p>Images get updated as more submissions are posted</p>
+                <p>
+                    all images and captions taken from
+                    <a href="https://www.reddit.com">reddit.com</a>
+                </p>
+                <p>
+                    <a href="https://github.com/notneelpatel/cat-hour"
+                        >GitHub Repo</a
+                    >
+                </p>
+            </div>
+        </header>
+        <main>
+            <div id="container">
+                <div id="image-container" data-entries-container>
+                    <template data-template>
+                        <div class="window-container" data-container>
+                            <div class="window-border">
+                                <div class="window-title-bar">
+                                    <span class="window-title">CAT / HOUR</span>
+                                    <div class="window-controls">
+                                        <button
+                                            type="button"
+                                            class="window-control-button"
+                                            id="window-minmax"
+                                        >
+                                            _
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="window-control-button"
+                                            id="window-minmax"
+                                        >
+                                            <strong>&square;</strong>
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="window-control-button"
+                                            id="window-close"
+                                        >
+                                            x
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="window-content">
+                                    <div class="post-wrapper">
+                                        <img
+                                            class="cat-img"
+                                            href="#"
+                                            data-img
+                                        />
+                                        <div class="caption">
+                                            <p data-caption></p>
+                                        </div>
+                                        <a class="url" href="#" data-url
+                                            >source</a
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </main>
 
-    <footer>        
-      <script src="./scripts/oneko.js" defer></script>
-      <script src="./scripts/cathour.js" defer></script>
-      <script src="./scripts/window.js"></script>
-    </footer>
-  </body>
+        <footer>
+            <script src="./scripts/oneko.js" defer></script>
+            <script src="./scripts/cathour.js" defer></script>
+            <script src="./scripts/window.js"></script>
+        </footer>
+    </body>
 </html>

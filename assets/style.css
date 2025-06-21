@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap");
 @font-face {
     font-family: "baasic";
     src: url("basiic.ttf") format("truetype");
@@ -6,7 +6,7 @@
     font-style: normal;
 }
 
-:root{
+:root {
     --background-url: url("bg.gif");
 
     --text-white: #f2faf5;
@@ -32,7 +32,7 @@
 
 /* Window Styles */
 
-.window-container{
+.window-container {
     position: absolute;
     margin: 0;
     padding: 0;
@@ -51,7 +51,6 @@
     border-bottom: 2px solid var(--window-background-colour);
     padding: 10px;
     cursor: move;
-
 }
 
 .window-title {
@@ -60,7 +59,6 @@
 .window-controls {
     display: flex;
     justify-content: space-between;
-
 }
 
 #window-minmax {
@@ -96,8 +94,7 @@
     color: var(--text-dark);
 }
 
-
-.post-wrapper{
+.post-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -106,10 +103,9 @@
     border: 3px solid var(--window-background-colour);
     border-radius: 5px;
     max-width: min-content;
-
 }
 
-.cat-img{
+.cat-img {
     display: flex;
     align-self: center;
     width: fit-content;
@@ -117,21 +113,21 @@
     max-height: calc(var(--max-h));
 }
 
-.caption{
+.caption {
     width: fit-content;
     word-wrap: break-word;
     padding: 8px;
 }
 
-.caption p{
-    margin: 0;;
+.caption p {
+    margin: 0;
 }
 
-.url{
+.url {
     text-align: left;
     font-size: 12px;
     padding: 4px;
-    color:var(--linkcolour);
+    color: var(--linkcolour);
     width: fit-content;
 }
 
@@ -142,82 +138,73 @@
     box-shadow: -5px 5px 5px 2px rgba(0, 0, 0, 0.2);
 }
 
-body{
+body {
     background-image: var(--background-url);
     background-repeat: repeat;
 }
 
-
-header{
+header {
     position: absolute;
     top: 0;
     left: 0;
-    display:flex;
+    display: flex;
 }
 
-header p{
+header p {
     font-size: 13px;
     color: var(--text-dark);
     margin: 0;
-
 }
 
-#grid-button-container{
-    background-color:var(--window-background-colour);
-    display:flex;
+#grid-button-container {
+    background-color: var(--window-background-colour);
+    display: flex;
     align-items: center;
     padding: 5px;
     border-radius: 10px;
-    width:fit-content;
+    width: fit-content;
     height: min-content;
     margin: 10px;
 }
 
-#grid-button-container svg{
+#grid-button-container svg {
     fill: var(--title-text-colour);
 }
 
-#grid-button-container svg:hover{
+#grid-button-container svg:hover {
     fill: #69555c;
 }
 
-#info-box{
+#info-box {
     border: 3px solid var(--window-background-colour);
-    border-radius:10px;
+    border-radius: 10px;
     background-color: var(--background-colour);
     padding: 5px;
     margin: 10px;
 }
-
-
 
 #container {
     max-width: 400px;
     max-height: 400px;
 }
 
-#image-container{
+#image-container {
     max-width: 400px;
     max-height: 400px;
-
 }
 
-
-p{
+p {
     font-family: "baasic", sans-serif;
-    color:var(--text-colour);
+    color: var(--text-colour);
     text-align: center;
 }
-a{
-    font-family:"baasic", sans-serif;
-    color:var(--linkcolour)
+a {
+    font-family: "baasic", sans-serif;
+    color: var(--linkcolour);
 }
 
-
-
-
 @media (max-width: 1200px) {
-    :root{
+    :root {
         --max-w: 450px;
         --max-h: 450px;
         --title-font-size: 16px;
@@ -225,11 +212,9 @@ a{
         --button-w: 40px;
         --button-h: 26px;
     }
-
-
 }
 @media (max-width: 1000px) {
-    :root{
+    :root {
         --max-w: 200px;
         --max-h: 450px;
         --title-font-size: 12px;
@@ -241,11 +226,6 @@ a{
     .window-controls button {
         padding: 2px;
     }
-
 }
 @media (max-width: 600px) {
-
-
-
 }
-

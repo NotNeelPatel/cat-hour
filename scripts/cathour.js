@@ -77,14 +77,14 @@ function weightedRandom(weights) {
     return weights.length - 1;
 }
 
-
 // loads the 5 latest posts from a subreddit
 // and grabs all the posts that contain only one image in it
 // then puts the relevant data in a JSON object and returns an array of
 // all potential candidates
 async function getCandidates(subreddit) {
-    let limit = 5
-    let reddit_url = "https://www.reddit.com/r/"+subreddit+"/new.json?limit="+limit;
+    let limit = 5;
+    let reddit_url =
+        "https://www.reddit.com/r/" + subreddit + "/new.json?limit=" + limit;
     // use for debug
     //let reddit_url = "./debug.json";
     let new_candidates = [];
@@ -95,7 +95,7 @@ async function getCandidates(subreddit) {
     for (let i = 0; i < limit; i++) {
         if (data.data.children[i] != null) {
             const children = data.data.children[i];
-            
+
             // Filter out galleries and videos and imgur links (they dont embed on other websites)
             if (
                 !children.data.is_video &&
@@ -136,7 +136,8 @@ function setImages(subreddit, id, reddit_objs) {
     } else {
         // If not, retry (this can be done by calling setImages again)
         console.log(
-            "no more candidates for subreddit: " + subs_and_weights[subreddit].subreddit
+            "no more candidates for subreddit: " +
+                subs_and_weights[subreddit].subreddit
         );
         return false;
     }
@@ -153,25 +154,26 @@ function setImages(subreddit, id, reddit_objs) {
     const h = window.innerHeight - 400;
     const quarter_w = 150;
     const quarter_h = 50;
-    if(w > 100){
+    if (w > 100) {
         card.style.top = Math.random() * h + quarter_h + "px";
         card.style.left = Math.random() * w + quarter_w + "px";
     }
     dragElement(document.getElementById("window-" + id));
     return true;
-
 }
 
 let candidates = [];
 async function loadCandidatesAndImages() {
     // Fetch all candidates asynchronously
     candidates = await Promise.all(
-        subs_and_weights.map((_, d) => getCandidates(subs_and_weights[d].subreddit))
+        subs_and_weights.map((_, d) =>
+            getCandidates(subs_and_weights[d].subreddit)
+        )
     );
 
     let img_count = 0;
     var retries = 0;
-    
+
     // Attempt at most 20 times to get 9 images.
     // This is based off the math of E(x) = nlog(n), where n is 9, therefore E(x) ≈ 20
     // This is incorrect math because of the weighted random,
@@ -193,14 +195,17 @@ async function loadCandidatesAndImages() {
             return;
         }
     }
-    const imageElements = document.querySelectorAll('img');
+    const imageElements = document.querySelectorAll("img");
     let loadedImages = 0; // Initialize counter variable
 
     // Wait for all images to load, then move them if user is on a phone
-    imageElements.forEach(imageElement => {
-        imageElement.addEventListener('load', () => {
+    imageElements.forEach((imageElement) => {
+        imageElement.addEventListener("load", () => {
             loadedImages++;
-            if (loadedImages === imageElements.length && window.innerWidth < 600) {
+            if (
+                loadedImages === imageElements.length &&
+                window.innerWidth < 600
+            ) {
                 alignImages();
             }
         });
