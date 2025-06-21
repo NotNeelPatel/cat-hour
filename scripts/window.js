@@ -70,7 +70,6 @@ function dragElement(elem) {
           win.style.zIndex = z++;
           current = current.next;
         }
-
     }
 
     function closeDragElement() {
@@ -81,7 +80,6 @@ function dragElement(elem) {
 
 function mobileAlignImages(){
   var currentHeight = 100;
-  console.log("mobile")
   for(let i = 0; i < 9; i++){
     const card = document.getElementById("window-" + i);
     card.style.transition = "ease-in-out 0.3s";
@@ -89,7 +87,6 @@ function mobileAlignImages(){
     card.style.top = (currentHeight)*1.05 + ("px");
     currentHeight += card.offsetHeight;
     card.style.transition = "0s";
-    console.log(card.style.left)
   }
 
 }

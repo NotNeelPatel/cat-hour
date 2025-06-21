@@ -124,7 +124,6 @@ function setImages(subreddit, id, reddit_objs) {
     const img = card.querySelector("[data-img]");
     const url = card.querySelector("[data-url]");
     const caption = card.querySelector("[data-caption]");
-
     // This value increases for every image from that subreddit is already placed
     // This prevents duplicate images
     let count = subs_and_weights[subreddit].count;
@@ -150,14 +149,17 @@ function setImages(subreddit, id, reddit_objs) {
     card.style.zIndex = 18 - id;
 
     // Place images roughly in center, with some RNG
-    const w = window.innerWidth - 600;
+    const w = window.innerWidth - 500;
     const h = window.innerHeight - 400;
     const quarter_w = 150;
     const quarter_h = 50;
-    card.style.top = Math.random() * h + quarter_h + "px";
-    card.style.left = Math.random() * (w - quarter_w) + quarter_w + "px";
+    if(w > 100){
+        card.style.top = Math.random() * h + quarter_h + "px";
+        card.style.left = Math.random() * w + quarter_w + "px";
+    }
     dragElement(document.getElementById("window-" + id));
     return true;
+
 }
 
 let candidates = [];
@@ -188,8 +190,21 @@ async function loadCandidatesAndImages() {
                     "Please check developer console and try again in ~1 hour"
                 );
             }
+            return;
         }
     }
+    const imageElements = document.querySelectorAll('img');
+    let loadedImages = 0; // Initialize counter variable
+
+    // Wait for all images to load, then move them if user is on a phone
+    imageElements.forEach(imageElement => {
+        imageElement.addEventListener('load', () => {
+            loadedImages++;
+            if (loadedImages === imageElements.length && window.innerWidth < 600) {
+                alignImages();
+            }
+        });
+    });
 }
 
 loadCandidatesAndImages();
