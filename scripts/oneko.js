@@ -60,7 +60,7 @@
         nekoEl.style.width = "32px";
         nekoEl.style.height = "32px";
         nekoEl.style.position = "fixed";
-        nekoEl.style.backgroundImage = "url('./oneko.gif')";
+        nekoEl.style.backgroundImage = "url('./assets/oneko.gif')";
         nekoEl.style.imageRendering = "pixelated";
         nekoEl.style.left = "16px";
         nekoEl.style.top = "16px";
@@ -68,10 +68,12 @@
 
         document.body.appendChild(nekoEl);
 
-        document.onmousemove = (event) => {
+        // Minor modification for CAT/HOUR: add event listener as this
+        // would stop working whenever a window was moved.
+        document.addEventListener('mousemove', (event) => {
             mousePosX = event.clientX;
             mousePosY = event.clientY;
-        };
+        });
 
         window.onekoInterval = setInterval(frame, 100);
     }

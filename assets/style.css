@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap");
+@font-face {
+    font-family: "baasic";
+    src: url("basiic.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --background-url: url("bg.gif");
+
+    --text-white: #f2faf5;
+    --text-dark: #282927;
+    --linkcolour: #4d1d50;
+    --title-text-colour: #413338;
+
+    --title-bar-colour: #f1dddd;
+    --window-minmax-colour: #b6a4b5;
+    --window-close-colour: #d4a49f;
+
+    --background-colour: #f1dddd;
+    --container-colour: #b394a2d2;
+    --window-background-colour: #d19ca6;
+
+    --max-w: 450px;
+    --max-h: 450px;
+    --title-font-size: 16px;
+    --button-font-size: 12px;
+    --button-w: 40px;
+    --button-h: 26px;
+}
+
+/* Window Styles */
+
+.window-container {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+.window-title-bar {
+    font-family: "Silkscreen", sans-serif;
+    font-size: var(--title-font-size);
+    background-color: var(--title-bar-colour);
+    color: var(--title-text-colour);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px 5px 0 0;
+    border-bottom: 2px solid var(--window-background-colour);
+    padding: 10px;
+    cursor: move;
+}
+
+.window-title {
+}
+
+.window-controls {
+    display: flex;
+    justify-content: space-between;
+}
+
+#window-minmax {
+    background-color: var(--window-minmax-colour);
+}
+
+#window-close {
+    background-color: var(--window-close-colour);
+}
+
+.window-controls button {
+    font-family: "Silkscreen", sans-serif;
+    text-align: center;
+    color: var(--text-white);
+    border: 2px solid var(--window-background-colour);
+    font-size: var(--button-font-size);
+    width: var(--button-w);
+    height: var(--button-h);
+    border-radius: 5px;
+    margin: 2px;
+    padding: 5px;
+}
+
+.window-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    margin: 0;
+    background-color: var(--container-colour);
+    border-radius: 0 0 5px 5px;
+    font-size: 15px;
+    color: var(--text-dark);
+}
+
+.post-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    background-color: var(--title-bar-colour);
+    border: 3px solid var(--window-background-colour);
+    border-radius: 5px;
+    max-width: min-content;
+}
+
+.cat-img {
+    display: flex;
+    align-self: center;
+    width: fit-content;
+    max-width: calc(var(--max-w));
+    max-height: calc(var(--max-h));
+}
+
+.caption {
+    width: fit-content;
+    word-wrap: break-word;
+    padding: 8px;
+}
+
+.caption p {
+    margin: 0;
+}
+
+.url {
+    text-align: left;
+    font-size: 12px;
+    padding: 4px;
+    color: var(--linkcolour);
+    width: fit-content;
+}
+
+.window-border {
+    max-width: fit-content;
+    max-height: fit-content;
+    border-radius: 5px;
+    box-shadow: -5px 5px 5px 2px rgba(0, 0, 0, 0.2);
+}
+
+body {
+    background-image: var(--background-url);
+    background-repeat: repeat;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+}
+
+header p {
+    font-size: 13px;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+#grid-button-container {
+    background-color: var(--window-background-colour);
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 10px;
+    width: fit-content;
+    height: min-content;
+    margin: 10px;
+}
+
+#grid-button-container svg {
+    fill: var(--title-text-colour);
+}
+
+#grid-button-container svg:hover {
+    fill: #69555c;
+}
+
+#info-box {
+    border: 3px solid var(--window-background-colour);
+    border-radius: 10px;
+    background-color: var(--background-colour);
+    padding: 5px;
+    margin: 10px;
+}
+
+#container {
+    max-width: 400px;
+    max-height: 400px;
+}
+
+#image-container {
+    max-width: 400px;
+    max-height: 400px;
+}
+
+p {
+    font-family: "baasic", sans-serif;
+    color: var(--text-colour);
+    text-align: center;
+}
+a {
+    font-family: "baasic", sans-serif;
+    color: var(--linkcolour);
+}
+
+@media (max-width: 1200px) {
+    :root {
+        --max-w: 450px;
+        --max-h: 450px;
+        --title-font-size: 16px;
+        --button-font-size: 12px;
+        --button-w: 40px;
+        --button-h: 26px;
+    }
+}
+@media (max-width: 1000px) {
+    :root {
+        --max-w: 200px;
+        --max-h: 450px;
+        --title-font-size: 12px;
+        --button-font-size: 8px;
+        --button-w: 30px;
+        --button-h: 16px;
+    }
+
+    .window-controls button {
+        padding: 2px;
+    }
+}
+@media (max-width: 600px) {
+}
